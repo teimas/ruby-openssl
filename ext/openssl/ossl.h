@@ -62,6 +62,9 @@
 # define OSSL_USE_ENGINE
 #endif
 
+/* Enables deprecated SSL ENGINE */
+# define OSSL_USE_ENGINE
+
 /*
  * Common Module
  */
