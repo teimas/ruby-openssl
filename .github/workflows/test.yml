@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   ruby-versions:
-    uses: ruby/actions/.github/workflows/ruby_versions.yml@master
+    uses: ruby/actions/.github/workflows/ruby_versions.yml@a195416f7d76e3f41d8af4b3b8dc3e6a80f8b81e  # master
     with:
       engine: cruby-truffleruby
       min_version: 2.7
@@ -32,10 +32,10 @@ jobs:
 
     steps:
       - name: repo checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26  # v3
 
       - name: load ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b  # v1
         with:
           ruby-version: ${{ matrix.ruby }}
 
@@ -88,7 +88,7 @@ jobs:
           - { os: ubuntu-latest, ruby: "3.0", openssl: openssl-3.0.9, fips-enabled: true, append-configure: 'enable-fips', name-extra: 'fips' }
     steps:
       - name: repo checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26  # v3
 
       - name: prepare openssl
         run: |
@@ -135,7 +135,7 @@ jobs:
         if: matrix.fips-enabled
 
       - name: load ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b  # v1
         with:
           ruby-version: ${{ matrix.ruby }}
 
